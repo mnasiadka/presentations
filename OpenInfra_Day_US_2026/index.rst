@@ -724,7 +724,8 @@ The pivot: adopting itself
      </g>
      <g class="fragment">
        <rect class="box capi" x="515" y="220" width="330" height="60" rx="10"/>
-       <text x="680" y="258" text-anchor="middle">CAPI + CAPO (clusterctl init → self)</text>
+       <text x="680" y="245" text-anchor="middle">CAPI + CAPO</text>
+       <text class="sub" x="680" y="269" text-anchor="middle">clusterctl init → itself</text>
      </g>
      <g class="fragment">
        <rect class="box capi-strong" x="515" y="295" width="330" height="80" rx="10"/>
