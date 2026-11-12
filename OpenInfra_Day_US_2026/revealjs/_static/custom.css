@@ -1,0 +1,525 @@
+/* OpenInfra Foundation speaker template for "Magnum After Heat",
+ * layered on reveal.js "white".
+ *
+ * Template: brand colours #e61e24 #f4a93a #39ae4a #28a4db #161616,
+ * Roboto Condensed headings, Roboto body, four-colour strip and the
+ * OpenInfra mark on every slide (template/bg-*.png), ">>" section labels.
+ */
+
+@font-face {
+  font-family: "Roboto";
+  src: url(template/Roboto.ttf) format("truetype");
+  font-weight: 100 900;
+  font-stretch: 75% 100%;
+}
+
+@font-face {
+  font-family: "Roboto Condensed";
+  src: url(template/RobotoCondensed.ttf) format("truetype");
+  font-weight: 100 900;
+}
+
+:root {
+  --ink: #161616;
+  --muted: #5b6168;
+  --line: #a3a8ad;
+  --panel: #f4f5f6;
+  /* brand colours (strokes, fills) and darker shades for text on white */
+  --magnum: #28a4db;
+  --magnum-text: #1479a8;
+  --magnum-soft: #e3f3fb;
+  --capi: #39ae4a;
+  --capi-text: #23803a;
+  --capi-soft: #e5f5e8;
+  --legacy: #f4a93a;
+  --legacy-text: #a8650a;
+  --legacy-soft: #fdf1de;
+  --danger: #e61e24;
+  --danger-text: #b3161b;
+  --danger-soft: #fde5e5;
+  --sans: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  --condensed: "Roboto Condensed", "Arial Narrow", sans-serif;
+  --mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+  --r-main-font: var(--sans);
+  --r-heading-font: var(--condensed);
+}
+
+/* Every slide gets the template background; dark slides override it
+ * with data-background-image in index.rst. */
+.reveal .slide-background-content {
+  background-color: #fff;
+  background-image: url(template/bg-light.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.reveal {
+  font-family: var(--sans);
+  color: var(--ink);
+  font-size: 30px;
+}
+
+.reveal .slides section {
+  text-align: left;
+}
+
+/* Make room for the ">>" label, which follows the title in the markup. */
+.reveal h2:has(+ .section-label) {
+  margin-top: 0.75em;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+  font-family: var(--condensed);
+  color: var(--ink);
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+
+/* The title slide renders its own headline. */
+.reveal h1 {
+  display: none;
+}
+
+.reveal h2 {
+  font-size: 1.7em;
+  line-height: 1.05;
+  margin: 0 0 0.6em;
+}
+
+/* ">> NAME SECTION" label above the slide title */
+.reveal .section-label {
+  position: absolute;
+  top: 0.2em;
+  left: 0;
+  font-family: var(--sans);
+  font-size: 0.5em;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.reveal .section-label p {
+  margin: 0;
+}
+
+.reveal .section-label p::before {
+  content: "";
+  display: inline-block;
+  width: 1.3em;
+  height: 1em;
+  margin-right: 0.5em;
+  vertical-align: -0.12em;
+  background: url(template/chevrons.png) left center / contain no-repeat;
+}
+
+.reveal ul,
+.reveal ol {
+  display: block;
+  margin-left: 1.1em;
+}
+
+.reveal ul li::marker {
+  color: var(--capi);
+}
+
+.reveal li {
+  margin: 0.3em 0;
+}
+
+.reveal li li {
+  font-size: 0.85em;
+}
+
+.reveal p {
+  margin: 0.5em 0;
+}
+
+.reveal strong {
+  color: var(--capi-text);
+}
+
+.reveal em {
+  color: var(--magnum-text);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.reveal .muted {
+  color: var(--muted);
+}
+
+.reveal .small {
+  font-size: 0.86em;
+}
+
+/* Inline and block code */
+
+.reveal code {
+  font-family: var(--mono);
+  font-size: 0.82em;
+  color: #0e5f86;
+  background: var(--panel);
+  padding: 0.05em 0.3em;
+  border-radius: 4px;
+}
+
+.reveal pre {
+  width: 100%;
+  margin: 0.5em 0;
+  box-shadow: none;
+  font-family: var(--mono);
+  font-size: 0.62em;
+  line-height: 1.4;
+}
+
+.reveal pre code {
+  font-family: var(--mono);
+  font-size: 1em;
+  color: var(--ink);
+  background: var(--panel);
+  border-left: 6px solid var(--capi);
+  border-radius: 4px;
+  padding: 0.7em 1em;
+  max-height: none;
+  overflow: hidden;
+}
+
+/* highlight.js tokens */
+.reveal .hljs-keyword,
+.reveal .hljs-built_in,
+.reveal .hljs-literal { color: var(--capi-text); font-weight: 600; }
+.reveal .hljs-title,
+.reveal .hljs-title.function_,
+.reveal .hljs-title.class_ { color: var(--magnum-text); font-weight: 600; }
+.reveal .hljs-string { color: var(--legacy-text); }
+.reveal .hljs-number { color: var(--danger-text); }
+.reveal .hljs-comment,
+.reveal .hljs-meta { color: #6b7076; font-style: italic; }
+.reveal .hljs-section,
+.reveal .hljs-attr { color: var(--magnum-text); }
+.reveal .hljs-params { color: var(--ink); }
+
+/* Layout helpers: ".. container:: columns" with ".. container:: col" */
+
+.reveal .columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2em;
+  align-items: start;
+}
+
+.reveal .columns.wide-right {
+  grid-template-columns: 2fr 3fr;
+}
+
+.reveal .cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6em;
+}
+
+.reveal .cards.two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.reveal .card {
+  background: var(--panel);
+  border-radius: 6px;
+  border-top: 6px solid var(--line);
+  padding: 0.5em 0.75em 0.6em;
+  font-size: 0.84em;
+  line-height: 1.35;
+}
+
+.reveal .card p {
+  margin: 0.2em 0;
+}
+
+.reveal .card p:first-child {
+  font-family: var(--condensed);
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+.reveal .card.magnum { border-top-color: var(--magnum); background: var(--magnum-soft); }
+.reveal .card.capi { border-top-color: var(--capi); background: var(--capi-soft); }
+.reveal .card.legacy { border-top-color: var(--legacy); background: var(--legacy-soft); }
+.reveal .card.danger { border-top-color: var(--danger); background: var(--danger-soft); }
+
+/* Numbered steps, green circles like the template's section icons */
+
+.reveal .steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6em;
+  counter-reset: step;
+}
+
+.reveal .step {
+  counter-increment: step;
+  position: relative;
+  background: var(--panel);
+  border-radius: 6px;
+  padding: 0.5em 0.7em 0.6em 2.6em;
+  font-size: 0.82em;
+  line-height: 1.35;
+  min-height: 4.2em;
+}
+
+.reveal .step::before {
+  content: counter(step);
+  position: absolute;
+  left: 0.55em;
+  top: 0.5em;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  background: var(--capi);
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.5em;
+}
+
+.reveal .step p {
+  margin: 0.15em 0;
+}
+
+.reveal .step p:first-child {
+  font-family: var(--condensed);
+  font-weight: 700;
+  font-size: 1.12em;
+  color: var(--capi-text);
+}
+
+/* Callouts */
+
+.reveal .callout {
+  border-left: 6px solid var(--magnum);
+  background: var(--magnum-soft);
+  padding: 0.4em 0.8em;
+  border-radius: 4px;
+  font-size: 0.88em;
+}
+
+.reveal .callout.danger {
+  border-left-color: var(--danger);
+  background: var(--danger-soft);
+}
+
+.reveal .quote {
+  font-family: var(--condensed);
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--ink);
+  padding: 0;
+}
+
+.reveal .quote .attribution {
+  font-family: var(--sans);
+  font-size: 0.7em;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.reveal .chips {
+  display: flex;
+  gap: 0.5em;
+  flex-wrap: wrap;
+  font-size: 0.82em;
+}
+
+.reveal .chip {
+  background: var(--capi-soft);
+  color: var(--capi-text);
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.2em 0.9em;
+}
+
+/* Dark slides (title, section dividers, closing): ".. container:: dark" */
+
+.reveal .slides section:has(> .dark) h2,
+.reveal .dark,
+.reveal .dark h2 {
+  color: #fff;
+}
+
+.reveal .dark strong {
+  color: var(--capi);
+}
+
+.reveal .dark a,
+.reveal .dark code {
+  color: #fff;
+  background: transparent;
+}
+
+.reveal .title-slide {
+  margin-top: 1.6em;
+  margin-left: 0.6em;
+}
+
+.reveal .title-slide .headline {
+  font-family: var(--condensed);
+  font-size: 2.4em;
+  font-weight: 700;
+  line-height: 1.02;
+  text-transform: uppercase;
+  max-width: 13em;
+}
+
+.reveal .title-slide .subtitle {
+  font-size: 0.95em;
+  color: #d0d3d6;
+  max-width: 30em;
+  margin-top: 0.5em;
+}
+
+.reveal .speaker {
+  margin-top: 2em;
+}
+
+.reveal .speaker p {
+  margin: 0;
+}
+
+.reveal .speaker p:first-child {
+  font-family: var(--condensed);
+  font-weight: 700;
+  font-size: 1em;
+  color: var(--capi);
+}
+
+.reveal .speaker p + p {
+  font-size: 0.55em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.reveal .divider {
+  margin-top: 4em;
+  margin-left: 0.6em;
+}
+
+.reveal .divider .number {
+  font-family: var(--condensed);
+  font-weight: 700;
+  font-size: 0.8em;
+  color: var(--capi);
+}
+
+.reveal .divider .headline {
+  font-family: var(--condensed);
+  font-weight: 700;
+  font-size: 2.2em;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.reveal .divider .headline em {
+  color: var(--capi);
+  font-weight: 700;
+}
+
+/* Hide the section heading on slides that render their own headline. */
+.reveal .slides section:has(> .dark.hide-title) > h2 {
+  display: none;
+}
+
+/* SVG diagrams */
+
+.reveal svg.diagram {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 440px;
+  margin: 0.2em auto 0;
+  overflow: visible;
+}
+
+.reveal svg.diagram text {
+  font-family: var(--sans);
+  fill: var(--ink);
+  font-size: 22px;
+}
+
+.reveal svg.diagram text.title { font-family: var(--condensed); font-weight: 700; font-size: 26px; }
+.reveal svg.diagram text.sub { fill: var(--muted); font-size: 18px; }
+.reveal svg.diagram text.mono { font-family: var(--mono); font-size: 18px; }
+.reveal svg.diagram text.label { font-size: 17px; fill: var(--muted); }
+.reveal svg.diagram text.label-danger { font-size: 19px; fill: var(--danger-text); font-weight: 700; }
+.reveal svg.diagram text.label-capi { font-size: 19px; fill: var(--capi-text); font-weight: 700; }
+.reveal svg.diagram text.panel-title { font-size: 19px; font-weight: 500; fill: var(--muted); letter-spacing: 0.06em; }
+
+.reveal svg.diagram .box { fill: #fff; stroke: var(--line); stroke-width: 2; }
+.reveal svg.diagram .box.magnum { fill: var(--magnum-soft); stroke: var(--magnum); }
+.reveal svg.diagram .box.capi { fill: var(--capi-soft); stroke: var(--capi); }
+.reveal svg.diagram .box.capi-strong { fill: var(--capi-text); stroke: var(--capi-text); }
+.reveal svg.diagram .box.legacy { fill: var(--legacy-soft); stroke: var(--legacy); }
+.reveal svg.diagram .box.danger { fill: var(--danger-soft); stroke: var(--danger); }
+.reveal svg.diagram .box.panel { fill: var(--panel); stroke: none; }
+.reveal svg.diagram .box.ghost { fill: none; stroke: var(--line); }
+.reveal svg.diagram .dashed { stroke-dasharray: 9 7; }
+.reveal svg.diagram text.on-strong { fill: #fff; font-weight: 700; }
+
+.reveal svg.diagram .arrow { stroke: var(--ink); stroke-width: 2.5; fill: none; }
+.reveal svg.diagram .arrow.muted { stroke: var(--line); }
+.reveal svg.diagram .arrow.capi { stroke: var(--capi-text); stroke-width: 3; }
+.reveal svg.diagram .arrow.magnum { stroke: var(--magnum-text); }
+.reveal svg.diagram .lifeline { stroke: var(--line); stroke-width: 2; stroke-dasharray: 6 6; }
+
+.reveal .slide-number {
+  font-family: var(--sans);
+  background: transparent;
+  color: var(--muted);
+}
+
+/* Speaker notes are only shown in the speaker view. */
+.reveal aside.notes { display: none; }
+
+/* Agenda: the template's "topics to talk about" layout */
+
+.reveal .topics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7em 1.6em;
+  margin-top: 0.4em;
+}
+
+.reveal .topic {
+  position: relative;
+  padding-left: 1.6em;
+  font-size: 0.72em;
+  color: var(--muted);
+}
+
+.reveal .topic p {
+  margin: 0.1em 0;
+}
+
+.reveal .topic p:first-child {
+  font-family: var(--condensed);
+  font-weight: 700;
+  font-size: 1.35em;
+  color: var(--capi-text);
+}
+
+.reveal .topic::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  width: 1.15em;
+  height: 1.15em;
+  border-radius: 50%;
+  background: var(--capi);
+  color: #fff;
+  font-size: 1.05em;
+  line-height: 1.12em;
+  text-align: center;
+}

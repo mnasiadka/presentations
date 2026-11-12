@@ -1,0 +1,10 @@
+# Build outputs
+_build/
+*.pdf
+
+# Python
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
