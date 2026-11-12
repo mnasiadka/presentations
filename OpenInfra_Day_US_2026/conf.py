@@ -9,8 +9,9 @@ exclude_patterns = ["_build"]
 extensions = ["sphinx_revealjs"]
 
 revealjs_style_theme = "white"
-revealjs_static_path = ["_static"]
-revealjs_css_files = ["custom.css"]
+# Shared themes are copied to _static/<theme>/.
+revealjs_static_path = ["../themes"]
+revealjs_css_files = ["openinfra/openinfra.css"]
 
 revealjs_script_conf = {
     # 16:9 canvas; reveal.js scales it to the screen.
@@ -31,6 +32,6 @@ revealjs_script_plugins = [
     # Speaker view with notes, next slide and timer: press "s".
     {"name": "RevealNotes", "src": "revealjs/plugin/notes/notes.js"},
     # sphinx-revealjs emits <pre><code class="lang"> for highlight.js;
-    # token colours for the light theme are in custom.css.
+    # token colours are in the theme CSS.
     {"name": "RevealHighlight", "src": "revealjs/plugin/highlight/highlight.js"},
 ]

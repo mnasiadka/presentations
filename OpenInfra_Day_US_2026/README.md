@@ -1,26 +1,17 @@
 # Magnum After Heat: Pluggable Cluster API Drivers and the Road to Self-Managing Kubernetes
 
-OpenInfra Day US 2026, 20 minutes.
-
-`revealjs/` holds the talk as a Sphinx + sphinx-revealjs deck with
-SVG diagrams and click-by-click reveals, styled after the OpenInfra
-Foundation speaker template (brand colours, Roboto / Roboto Condensed,
-four-colour strip and OpenInfra mark; assets in `_static/template/`).
-Everything (reveal.js, fonts, plugins) is bundled locally, so it works
-offline.
+OpenInfra Day US 2026, 20 minutes. Uses the shared `openinfra` theme
+(`../themes/openinfra/`).
 
 ```console
-$ ~/venv/bin/pip install sphinx sphinx-revealjs
-$ cd revealjs
 $ make html        # -> _build/revealjs/index.html
-$ make pdf         # -> ../magnum-after-heat-revealjs.pdf        (one page per slide)
-$ make pdf-steps   # -> ../magnum-after-heat-revealjs-steps.pdf  (one page per click)
+$ make serve       # build and serve on http://localhost:8000 for presenting
+$ make pdf         # -> magnum-after-heat.pdf        (one page per slide)
+$ make pdf-steps   # -> magnum-after-heat-steps.pdf  (one page per click)
 ```
 
-Present by opening `_build/revealjs/index.html` in Chrome: `f` for full
-screen, `s` for the speaker view (notes, next slide, timer), arrow keys or a
-clicker to advance. PDF export uses `../../revealjs_pdf.mjs` (Node + the
-installed Chrome, no npm packages).
+Slides and speaker notes are in `index.rst`; diagrams are inline SVG in the
+same file.
 
 Sources: open reviews in
 [openstack/magnum-specs](https://review.opendev.org/q/project:openstack/magnum-specs+is:open),

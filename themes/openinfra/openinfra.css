@@ -1,21 +1,21 @@
-/* OpenInfra Foundation speaker template for "Magnum After Heat",
+/* OpenInfra Foundation speaker template for sphinx-revealjs decks,
  * layered on reveal.js "white".
  *
  * Template: brand colours #e61e24 #f4a93a #39ae4a #28a4db #161616,
  * Roboto Condensed headings, Roboto body, four-colour strip and the
- * OpenInfra mark on every slide (template/bg-*.png), ">>" section labels.
+ * OpenInfra mark on every slide (bg-*.png), ">>" section labels.
  */
 
 @font-face {
   font-family: "Roboto";
-  src: url(template/Roboto.ttf) format("truetype");
+  src: url(Roboto.ttf) format("truetype");
   font-weight: 100 900;
   font-stretch: 75% 100%;
 }
 
 @font-face {
   font-family: "Roboto Condensed";
-  src: url(template/RobotoCondensed.ttf) format("truetype");
+  src: url(RobotoCondensed.ttf) format("truetype");
   font-weight: 100 900;
 }
 
@@ -45,10 +45,11 @@
 }
 
 /* Every slide gets the template background; dark slides override it
- * with data-background-image in index.rst. */
+ * with data-background-image (../themes/openinfra/bg-dark.png,
+ * relative to the talk directory). */
 .reveal .slide-background-content {
   background-color: #fff;
-  background-image: url(template/bg-light.png);
+  background-image: url(bg-light.png);
   background-size: cover;
   background-position: center;
 }
@@ -113,7 +114,7 @@
   height: 1em;
   margin-right: 0.5em;
   vertical-align: -0.12em;
-  background: url(template/chevrons.png) left center / contain no-repeat;
+  background: url(chevrons.png) left center / contain no-repeat;
 }
 
 .reveal ul,

@@ -2,7 +2,7 @@ Magnum After Heat
 =================
 
 .. revealjs-section::
-   :data-background-image: _static/template/bg-dark.png
+   :data-background-image: ../themes/openinfra/bg-dark.png
 
 .. container:: dark title-slide
 
@@ -73,7 +73,7 @@ Part 1: Why Heat had to go
 --------------------------
 
 .. revealjs-section::
-   :data-background-image: _static/template/bg-dark.png
+   :data-background-image: ../themes/openinfra/bg-dark.png
 
 .. container:: dark hide-title divider
 
@@ -255,7 +255,7 @@ Part 2: Driver pluggability
 ---------------------------
 
 .. revealjs-section::
-   :data-background-image: _static/template/bg-dark.png
+   :data-background-image: ../themes/openinfra/bg-dark.png
 
 .. container:: dark hide-title divider
 
@@ -429,7 +429,7 @@ Part 3: Management clusters
 ---------------------------
 
 .. revealjs-section::
-   :data-background-image: _static/template/bg-dark.png
+   :data-background-image: ../themes/openinfra/bg-dark.png
 
 .. container:: dark hide-title divider
 
@@ -572,7 +572,7 @@ Part 4: k8s_kubeadm_v1
 ----------------------
 
 .. revealjs-section::
-   :data-background-image: _static/template/bg-dark.png
+   :data-background-image: ../themes/openinfra/bg-dark.png
 
 .. container:: dark hide-title divider
 
@@ -1001,7 +1001,7 @@ Part 5: What's next
 -------------------
 
 .. revealjs-section::
-   :data-background-image: _static/template/bg-dark.png
+   :data-background-image: ../themes/openinfra/bg-dark.png
 
 .. container:: dark hide-title divider
 
@@ -1090,7 +1090,7 @@ Thank you -- questions?
 -----------------------
 
 .. revealjs-section::
-   :data-background-image: _static/template/bg-dark.png
+   :data-background-image: ../themes/openinfra/bg-dark.png
 
 .. container:: dark columns
 
