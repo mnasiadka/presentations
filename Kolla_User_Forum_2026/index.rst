@@ -131,7 +131,7 @@ Highlights
 
       Housekeeping
 
-      CentOS Stream 10, networking-infoblox, Redis migration code removed
+      CentOS Stream 10 and networking-infoblox removed
 
 .. revealjs-notes::
 
