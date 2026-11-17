@@ -332,7 +332,7 @@ More in the images
 
    .. container:: card magnum fragment
 
-      Toolbox
+      Ansible
 
       ansible-core 2.21 in ``kolla-toolbox``
 
