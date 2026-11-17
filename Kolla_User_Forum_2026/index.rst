@@ -550,38 +550,6 @@ Removed in Kolla-Ansible
    enable_lb / enable_firewall / enable_vpn under
    OPENSTACK_NEUTRON_NETWORK).
 
-Fixes worth knowing
--------------------
-
-.. container:: section-label
-
-   02 · Kolla-Ansible
-
-.. container:: columns
-
-   .. container:: col small
-
-      * Instance snapshots no longer hang
-      * Concurrent instance builds no longer hit libvirt request limits
-      * nova-compute starts after ``/var/lib/nova`` was wiped
-      * Glance multinode + internal TLS: no more HTTP 500s on concurrent
-        image operations
-      * OVN VPNaaS traffic forwarding fixed
-
-   .. container:: col small
-
-      * Fernet key distribution delegated to the right group
-      * Retries for container facts / exec during RabbitMQ restarts
-      * RabbitMQ precheck accepts the shared backend TLS cert
-      * Prometheus precheck works with Ansible Vault values
-      * ``kolla-ansible check`` skips unhealthy containers (23.0.0-6)
-
-.. revealjs-notes::
-
-   LP numbers: snapshots LP#2158974, nova-compute after wipe LP#2051011,
-   Glance TLS LP#2160218, OVN VPNaaS LP#2160208, fernet LP#2163158,
-   container retries LP#2141675, check LP#2156900. 36 bug fixes in total.
-
 Part 3: Upgrading
 -----------------
 
