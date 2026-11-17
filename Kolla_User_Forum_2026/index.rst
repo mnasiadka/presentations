@@ -366,8 +366,8 @@ Nova and libvirt
    nova_scheduler_healthcheck_retries now 8 to cover the 160s worker
    restart window (LP#2162860).
 
-Storage, bare metal, identity
------------------------------
+Storage and bare metal
+----------------------
 
 .. container:: section-label
 
@@ -387,12 +387,6 @@ Storage, bare metal, identity
 
       x86_64 and aarch64 nodes each boot their own IPA image from one
       deployment
-
-   .. container:: card magnum fragment
-
-      Keystone federation
-
-      ``schema_version`` in federated attribute mappings
 
    .. container:: card legacy fragment
 
