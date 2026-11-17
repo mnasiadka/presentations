@@ -401,12 +401,11 @@ Nova and libvirt
 
       .. code-block:: yaml
 
-         # inventory (YAML)
-         compute:
-           hosts:
-             compute01:
-               nova_compute_availability_zone: az1
-               nova_compute_aggregates: [gpu, nvme]
+         # host_vars/compute01
+         nova_compute_availability_zone: az-1
+         nova_compute_aggregates:
+           - gpu-v100
+           - ssd-storage
 
       .. container:: callout fragment
 
@@ -414,7 +413,12 @@ Nova and libvirt
 
 .. revealjs-notes::
 
-   Aggregates are created if missing; memberships are reconciled. The
+   AZs and aggregates (change 988882): set the variables in host_vars or
+   group_vars; aggregates are created if missing and memberships are
+   reconciled on every deploy / reconfigure. When a host moves AZ it is
+   removed from the old AZ aggregate first, but the host must have no
+   instances on it -- Nova refuses the change otherwise. See the Nova guide,
+   "Host Aggregates and Availability Zones". The
    libvirt limit change fixes "Cannot recv data: Input/output error" during
    defineXML when several instances build at once. Tunables:
    libvirt_max_client_requests, libvirt_max_workers. Also
