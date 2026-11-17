@@ -9,6 +9,7 @@ offline.
 | Talk | Event |
 |---|---|
 | [Magnum After Heat](OpenInfra_Day_US_2026/) | OpenInfra Day US 2026 |
+| [Kolla & Kolla-Ansible 2026.2](Kolla_User_Forum_2026/) | Kolla User Forum |
 
 ## Layout
 

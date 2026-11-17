@@ -524,3 +524,50 @@
   line-height: 1.12em;
   text-align: center;
 }
+
+/* Stat tiles: ".. container:: stats" with ".. container:: stat <colour>",
+ * each holding a number paragraph and a label paragraph. */
+
+.reveal .stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6em;
+  margin: 0.3em 0 0.6em;
+}
+
+.reveal .stat {
+  background: var(--panel);
+  border-left: 6px solid var(--line);
+  border-radius: 4px;
+  padding: 0.35em 0.8em 0.45em;
+}
+
+.reveal .stat p {
+  margin: 0;
+}
+
+.reveal .stat p:first-child {
+  font-family: var(--condensed);
+  font-weight: 700;
+  font-size: 2em;
+  line-height: 1.1;
+}
+
+.reveal .stat p + p {
+  font-size: 0.7em;
+  color: var(--muted);
+}
+
+.reveal .stat.capi { border-left-color: var(--capi); }
+.reveal .stat.capi p:first-child { color: var(--capi-text); }
+.reveal .stat.legacy { border-left-color: var(--legacy); }
+.reveal .stat.legacy p:first-child { color: var(--legacy-text); }
+.reveal .stat.magnum { border-left-color: var(--magnum); }
+.reveal .stat.magnum p:first-child { color: var(--magnum-text); }
+
+.reveal .stats-caption {
+  font-family: var(--condensed);
+  font-weight: 700;
+  font-size: 0.9em;
+  margin-top: 0.4em;
+}
