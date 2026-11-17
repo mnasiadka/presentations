@@ -318,13 +318,6 @@ More in the images
 
    .. container:: card capi fragment
 
-      Let's Encrypt dns-01
-
-      ``letsencrypt-lego`` adds ``--challenge dns-01`` with any lego DNS
-      provider
-
-   .. container:: card capi fragment
-
       YAML configs
 
       ``kolla_set_configs`` loads ``config.yaml`` as well as
@@ -358,8 +351,7 @@ More in the images
 
 .. revealjs-notes::
 
-   dns-01 also takes --dns-additional-opts for flags like --dns.resolvers
-   when the default propagation check can't run. prometheus-mtail now comes
+   prometheus-mtail now comes
    from the active fork github.com/jaqx0r/mtail. Plus many exporter bumps
    (node, mysqld, memcached, libvirt, valkey, cadvisor, alertmanager).
    Bug fixes include syslinux in Debian ironic-conductor (ldlinux.c32 for
