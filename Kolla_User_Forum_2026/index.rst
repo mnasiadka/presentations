@@ -122,9 +122,10 @@ Highlights
 
    .. container:: card magnum fragment
 
-      Calmer libvirt
+      libvirt: rotated logs, parallel builds
 
-      virtlogd log rotation, higher request limits, fewer build failures
+      virtlogd rotates console logs; higher request limits stop
+      concurrent builds failing
 
    .. container:: card legacy fragment
 
@@ -390,8 +391,8 @@ Nova and libvirt
 
          * **Availability zones and aggregates** from inventory, reconciled
            on every deploy / reconfigure
-         * **virtlogd sidecar**: console logs rotated (2 MB × 3) instead of
-           growing forever
+         * **virtlogd** in ``nova_libvirt``: console logs rotated
+           (2 MB × 3) instead of growing forever
          * **libvirt limits raised**: ``max_client_requests`` 5 → 20,
            ``max_workers`` 20 → 50 -- fixes failures on concurrent builds
          * NFS / Quobyte mounts move to ``/var/lib/nova-mnt``; mount leak
