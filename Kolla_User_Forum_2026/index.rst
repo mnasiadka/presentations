@@ -461,8 +461,8 @@ Storage, bare metal, identity
    Set update_keystone_service_user_passwords: true to keep the old
    rotation behaviour.
 
-Database, messaging, monitoring
--------------------------------
+Database and messaging
+----------------------
 
 .. container:: section-label
 
@@ -491,31 +491,14 @@ Database, messaging, monitoring
       Prefetch 1 serialised quorum-queue consumers; RPC bursts hit false
       ``MessagingTimeout``\s
 
-   .. container:: card magnum fragment
-
-      Alertmanager
-
-      HAProxy HTTP check on ``/-/healthy`` plus a container healthcheck
-
-   .. container:: card magnum fragment
-
-      Grafana
-
-      Proxy support (``grafana_container_proxy``) and Grafana 13.2 fixes
-
-   .. container:: card magnum fragment
-
-      CloudKitty
-
-      HAProxy client / server timeouts for its unpaginated v1 API
-
 .. revealjs-notes::
 
    ProxySQL: writer_is_also_reader=2 (LP#2167037), chained-cert TLS fix
    (LP#2150449). Backups broke with newer MariaDB updates (10.11.19 /
    11.4.13): they were connecting through the load balancer and could lock
    the wrong Galera node. The fix is also in the 2025.1, 2025.2 and 2026.1
-   release notes (not 2024.2).
+   release notes (not 2024.2). New backup names match the restore docs;
+   old backups remain restorable.
 
    RabbitMQ prefetch (om_rabbitmq_qos_prefetch_count, also backported to
    2026.1): 1 was the lowest value oslo.messaging allows with stream
@@ -526,9 +509,7 @@ Database, messaging, monitoring
    can queue long enough to exceed rpc_response_timeout: a false
    MessagingTimeout with no broker problem. RabbitMQ's quorum queue docs
    recommend higher prefetch. 50 stays > 0 for streams and still bounds
-   in-flight messages per consumer; operators can override it. New backup names match the restore
-   docs; old backups remain restorable. Grafana: custom home dashboard,
-   grafana server instead of grafana-server, duplicated logs fixed.
+   in-flight messages per consumer; operators can override it.
 
 Removed in Kolla-Ansible
 ------------------------
