@@ -185,8 +185,11 @@ Building images
 
       .. container:: callout fragment
 
-         Multi-platform builds require ``--push``: buildx can't
-         ``--load`` multi-platform output.
+         **Multi-arch images go to a registry.** Building several
+         platforms at once creates one multi-arch image that can't be
+         loaded into the local Docker image store, so ``kolla-build``
+         requires ``--push`` and errors out without it. Single-platform
+         builds load locally as before.
 
 .. revealjs-notes::
 
@@ -194,6 +197,12 @@ Building images
    docker engine. Pip build ARGs are passed via --build-arg so they don't
    persist in the final image. Users overriding LABELs should drop
    build-date from their overrides.
+
+   Why --push: a normal build ends with "--load", importing the image into
+   the local Docker image store. A comma-separated --platform list produces
+   one multi-arch image (an index of per-architecture images), which buildx
+   can't load locally, so the only destination is a registry. Kolla checks
+   this up front and fails immediately instead of after a long build.
 
 Repositories as data
 --------------------
