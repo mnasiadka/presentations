@@ -427,8 +427,8 @@ Database and messaging
 
       RabbitMQ prefetch 1 → 50
 
-      Prefetch 1 serialised quorum-queue consumers; RPC bursts hit false
-      ``MessagingTimeout``\s
+      Prefetch 1 serialised quorum-queue consumers; RPC bursts caused
+      false ``MessagingTimeout`` errors
 
 .. revealjs-notes::
 
