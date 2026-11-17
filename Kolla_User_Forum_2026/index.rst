@@ -428,27 +428,13 @@ Storage, bare metal, identity
 
    02 · Kolla-Ansible
 
-.. container:: cards
+.. container:: cards two
 
    .. container:: card capi fragment
 
       VAST
 
       New backend for both Cinder and Manila
-
-   .. container:: card capi fragment
-
-      Glance + os-brick
-
-      ``enable_cinder_backend_privileged`` controls privileged Glance API
-      with host ``/dev``
-
-   .. container:: card magnum fragment
-
-      Faster volume clones
-
-      Cinder ↔ Glance service auth fixed: RBD copy-on-write cloning works
-      again
 
    .. container:: card magnum fragment
 
@@ -471,11 +457,8 @@ Storage, bare metal, identity
 
 .. revealjs-notes::
 
-   enable_cinder_backend_privileged defaults to true with iSCSI, Ceph or
-   VAST backends. The Cinder-Glance fix resolves 403s in
-   fetch_image_location (LP#2161971). Set
-   update_keystone_service_user_passwords: true to keep the old rotation
-   behaviour.
+   Set update_keystone_service_user_passwords: true to keep the old
+   rotation behaviour.
 
 Database, messaging, monitoring
 -------------------------------
