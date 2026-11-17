@@ -567,7 +567,9 @@ Your turn: what should Kolla do next?
 
       * ``#openstack-kolla`` on OFTC
       * Weekly meeting: Wednesdays 14:00 UTC in ``#openstack-kolla`` --
-        add your topic to the agenda
+        add your topic to the agenda on
+        `etherpad.opendev.org/p/KollaWhiteBoard
+        <https://etherpad.opendev.org/p/KollaWhiteBoard>`__
       * Bugs and feature requests: bugs.launchpad.net/kolla-ansible
       * Release notes: docs.openstack.org/releasenotes/kolla-ansible
 
