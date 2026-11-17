@@ -481,14 +481,15 @@ Database, messaging, monitoring
 
       MariaDB backups
 
-      Always taken from ``mariadb_backup_host``, connecting locally; fixed
-      for 10.11.19 / 11.4.13
+      Always taken from ``mariadb_backup_host``, connecting locally; fix
+      backported to 2025.1, 2025.2 and 2026.1
 
    .. container:: card magnum fragment
 
-      RabbitMQ
+      RabbitMQ prefetch 1 → 50
 
-      ``om_rabbitmq_qos_prefetch_count`` is now 50
+      Prefetch 1 serialised quorum-queue consumers; RPC bursts hit false
+      ``MessagingTimeout``\s
 
    .. container:: card magnum fragment
 
@@ -511,8 +512,21 @@ Database, messaging, monitoring
 .. revealjs-notes::
 
    ProxySQL: writer_is_also_reader=2 (LP#2167037), chained-cert TLS fix
-   (LP#2150449). Backups were connecting through the load balancer and
-   could lock the wrong Galera node. New backup names match the restore
+   (LP#2150449). Backups broke with newer MariaDB updates (10.11.19 /
+   11.4.13): they were connecting through the load balancer and could lock
+   the wrong Galera node. The fix is also in the 2025.1, 2025.2 and 2026.1
+   release notes (not 2024.2).
+
+   RabbitMQ prefetch (om_rabbitmq_qos_prefetch_count, also backported to
+   2026.1): 1 was the lowest value oslo.messaging allows with stream
+   queues for fanout. With quorum queues on by default, prefetch 1 means
+   RabbitMQ delivers the next message to a consumer only after the
+   previous one is acked, so nova-conductor, neutron-server, cinder-volume
+   etc. process strictly one at a time. With few workers, an RPC burst
+   can queue long enough to exceed rpc_response_timeout: a false
+   MessagingTimeout with no broker problem. RabbitMQ's quorum queue docs
+   recommend higher prefetch. 50 stays > 0 for streams and still bounds
+   in-flight messages per consumer; operators can override it. New backup names match the restore
    docs; old backups remain restorable. Grafana: custom home dashboard,
    grafana server instead of grafana-server, duplicated logs fixed.
 
