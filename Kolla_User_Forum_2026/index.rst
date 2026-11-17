@@ -438,9 +438,10 @@ Storage, bare metal, identity
 
    .. container:: card magnum fragment
 
-      Mixed-arch Ironic
+      aarch64 IPA over iPXE
 
-      Architecture-specific IPA images for x86_64 + aarch64 iPXE
+      x86_64 and aarch64 nodes each boot their own IPA image from one
+      deployment
 
    .. container:: card magnum fragment
 
