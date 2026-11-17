@@ -131,7 +131,8 @@ Highlights
 
       Housekeeping
 
-      CentOS Stream 10 and networking-infoblox removed
+      CentOS Stream 10 and networking-infoblox removed; ``keystone``
+      container renamed to ``keystone-api``
 
 .. revealjs-notes::
 
