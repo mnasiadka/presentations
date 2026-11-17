@@ -16,7 +16,7 @@ Kolla 2026.2
 
    .. container:: speaker
 
-      Michal Nasiadka
+      Michal Nasiadka · Bartosz Bezak
 
       StackHPC · Kolla User Forum
 
@@ -607,29 +607,39 @@ Upgrade checklist
    live migration or hard reboot; leftover mounts can then be unmounted
    (busy ones refuse). Hard reboot instances to pick up virtlogd.
 
-Thank you -- questions?
------------------------
+Your turn: what should Kolla do next?
+-------------------------------------
 
 .. revealjs-section::
    :data-background-image: ../themes/openinfra/bg-dark.png
 
-.. container:: dark columns
+.. container:: dark columns wide-left
+
+   .. container:: col prompts
+
+      * What hurts in **your** deployment today?
+      * Which upgrades were painful -- and why?
+      * What features or services should we add next?
+      * What's missing from the docs?
 
    .. container:: col
 
-      Release notes:
+      Keep the conversation going:
 
-      * docs.openstack.org/releasenotes/kolla/2026.2.html
-      * docs.openstack.org/releasenotes/kolla-ansible/2026.2.html
+      * ``#openstack-kolla`` on OFTC
+      * Bugs and feature requests: bugs.launchpad.net/kolla-ansible
+      * Release notes: docs.openstack.org/releasenotes/kolla-ansible
 
-      Get involved: ``#openstack-kolla`` on OFTC
+      **Michal Nasiadka** · michal@stackhpc.com
 
-   .. container:: col
+      **Bartosz Bezak** · bartosz@stackhpc.com
 
-      **Michal Nasiadka** · StackHPC
-
-      michal@stackhpc.com
+      StackHPC
 
 .. revealjs-notes::
 
-   Q&A.
+   Open discussion -- the main point of the forum. Go through the prompts
+   one at a time and capture answers (pain points, upgrade stories,
+   feature proposals, doc gaps) for the PTG / weekly meeting. Ask people
+   to file bugs or feature requests on Launchpad afterwards so they don't
+   get lost.

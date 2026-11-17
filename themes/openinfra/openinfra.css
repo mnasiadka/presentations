@@ -571,3 +571,30 @@
   font-size: 0.9em;
   margin-top: 0.4em;
 }
+
+/* Discussion slide: large prompts on the left, follow-up links on the right */
+
+.reveal .columns.wide-left {
+  grid-template-columns: 3fr 2fr;
+}
+
+.reveal .prompts li {
+  font-family: var(--condensed);
+  font-weight: 700;
+  font-size: 1.15em;
+  margin: 0.45em 0;
+}
+
+.reveal .dark .prompts strong {
+  color: var(--capi);
+}
+
+.reveal .dark .prompts + .col {
+  font-size: 0.8em;
+}
+
+/* Dark slides with a visible title have no ">>" label; keep the title
+ * clear of the colour strip. */
+.reveal .slides section:has(> .dark:not(.hide-title)) > h2 {
+  margin-top: 0.6em;
+}
