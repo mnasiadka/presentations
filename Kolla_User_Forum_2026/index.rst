@@ -327,7 +327,8 @@ More in the images
 
       keystone → keystone-api
 
-      ``keystone`` image deprecated, then removed in 23.0.0-4
+      The ``keystone`` image is replaced by the identical
+      ``keystone-api`` image
 
    .. container:: card magnum fragment
 
