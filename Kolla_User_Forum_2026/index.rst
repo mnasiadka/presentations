@@ -110,12 +110,6 @@ Highlights
 
    .. container:: card magnum fragment
 
-      Kerbside
-
-      Native SPICE proxy for high-fidelity VDI consoles
-
-   .. container:: card magnum fragment
-
       AZs from inventory
 
       Nova host aggregates and availability zones managed by Kolla-Ansible
@@ -253,61 +247,6 @@ Repositories as data
    the Python-level injection in kolla_worker.py. Base repos are explicitly
    re-enabled in every service image so child images keep access to base
    OS packages.
-
-Kerbside: SPICE-native consoles
--------------------------------
-
-.. container:: section-label
-
-   01 · Kolla
-
-.. raw:: html
-
-   <svg class="diagram" viewBox="0 0 1200 250" role="img"
-        aria-label="A SPICE client connects through the Kerbside proxy to nova-libvirt-spice on the hypervisor">
-     <defs>
-       <marker id="kah1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-         <path d="M0,0 L10,5 L0,10 z" fill="#23803a"/>
-       </marker>
-     </defs>
-     <rect class="box" x="20" y="60" width="300" height="120" rx="12"/>
-     <text class="title" x="170" y="112" text-anchor="middle">SPICE client</text>
-     <text class="sub" x="170" y="142" text-anchor="middle">spice-direct console</text>
-     <path class="arrow capi" d="M320,120 L448,120" marker-end="url(#kah1)"/>
-
-     <rect class="box capi-strong" x="450" y="60" width="300" height="120" rx="12"/>
-     <text class="title on-strong" x="600" y="112" text-anchor="middle">Kerbside</text>
-     <text x="600" y="142" text-anchor="middle" style="fill:#fff;font-size:18px">native SPICE proxy</text>
-     <path class="arrow capi" d="M750,120 L878,120" marker-end="url(#kah1)"/>
-
-     <rect class="box capi" x="880" y="60" width="300" height="120" rx="12"/>
-     <text class="title" x="1030" y="112" text-anchor="middle">nova-libvirt-spice</text>
-     <text class="sub" x="1030" y="142" text-anchor="middle">hypervisor</text>
-     <text class="label" x="600" y="225" text-anchor="middle">no HTML5 transcoding in Horizon · no direct access to hypervisor console ports</text>
-   </svg>
-
-.. container:: columns
-
-   .. container:: col small
-
-      * New Kerbside images; second libvirt image ``nova-libvirt-spice``
-        used when ``enable_kerbside: true``
-      * ``nova_spice_require_secure`` forces TLS-secured SPICE channels
-        (default ``false``)
-
-   .. container:: col small
-
-      * Rocky: qemu-kvm with SPICE from the community
-        ``ligenix/enterprise-qemu-spice`` COPR -- proof of concept only
-      * Known issue: no ``usb-audio`` there; use ``ich9`` or ``ac97``
-
-.. revealjs-notes::
-
-   Kerbside exposes Nova's new spice-direct console type for high fidelity
-   virtual desktops. The COPR is a third-party rebuild with no vendor
-   support. Guests with hw_sound_model=usb fail to start on Rocky with that
-   build until it ships usb-audio. nova_spice_require_secure needs TLS
-   certificates on the compute nodes.
 
 More in the images
 ------------------
