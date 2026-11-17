@@ -598,3 +598,18 @@
 .reveal .slides section:has(> .dark:not(.hide-title)) > h2 {
   margin-top: 0.6em;
 }
+
+/* Call to action on dark slides, e.g. under discussion prompts */
+.reveal .dark .invite {
+  margin-top: 1.2em;
+  padding: 0.5em 0.9em;
+  border-left: 6px solid var(--capi);
+  border-radius: 4px;
+  background: rgba(57, 174, 74, 0.14);
+  font-size: 0.85em;
+  line-height: 1.35;
+}
+
+.reveal .dark .invite p {
+  margin: 0;
+}

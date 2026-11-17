@@ -561,6 +561,12 @@ Your turn: what should Kolla do next?
       * What features or services should we add next?
       * What's missing from the docs?
 
+      .. container:: invite
+
+         **Want to help maintain Kolla but don't know where to start?**
+         Talk to us -- we're happy to mentor new reviewers and
+         maintainers.
+
    .. container:: col
 
       Keep the conversation going:
@@ -586,6 +592,11 @@ Your turn: what should Kolla do next?
    feature proposals, doc gaps) for the PTG / weekly meeting. Ask people
    to file bugs or feature requests on Launchpad afterwards so they don't
    get lost.
+
+   Close with the maintainer invitation: anyone who wants to help but
+   doesn't know where to start should talk to us after the session or in
+   #openstack-kolla -- we're happy to mentor new reviewers and
+   maintainers.
 
    Weekly meeting: Wednesdays 14:00 UTC in #openstack-kolla; the time moves by an hour
    when US/EU daylight saving starts and ends. Agenda:
