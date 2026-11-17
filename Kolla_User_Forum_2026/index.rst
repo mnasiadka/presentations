@@ -585,7 +585,6 @@ Your turn: what should Kolla do next?
    to file bugs or feature requests on Launchpad afterwards so they don't
    get lost.
 
-   Weekly meeting (opendev irc-meetings, kolla-team-meeting.yaml):
-   Wednesdays 14:00 UTC in #openstack-kolla; the time moves by an hour
+   Weekly meeting: Wednesdays 14:00 UTC in #openstack-kolla; the time moves by an hour
    when US/EU daylight saving starts and ends. Agenda:
    docs.openstack.org/kolla/latest/contributor/meeting.html
