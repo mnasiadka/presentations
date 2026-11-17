@@ -238,8 +238,8 @@ Repositories as data
 
       Cleanup in the templates
 
-      ``kolla_cleanup_repos()`` and ``kolla_enable_base_repos()`` Jinja2
-      macros run before any ``USER`` directive
+      Jinja2 macros in each Dockerfile clean up repos and re-enable the
+      base OS repos, so child images keep access to base packages
 
 .. container:: callout danger fragment
 
@@ -248,10 +248,10 @@ Repositories as data
 
 .. revealjs-notes::
 
-   The macro change replaces the Python-level injection in kolla_worker.py
-   and fixes permission errors when non-root service users touched
-   root-owned repo files. Base repos are explicitly re-enabled in every
-   service image so child images keep access to base OS packages.
+   The macros (kolla_cleanup_repos(), kolla_enable_base_repos()) replace
+   the Python-level injection in kolla_worker.py. Base repos are explicitly
+   re-enabled in every service image so child images keep access to base
+   OS packages.
 
 Kerbside: SPICE-native consoles
 -------------------------------
