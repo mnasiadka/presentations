@@ -518,7 +518,7 @@ Removed in Kolla-Ansible
 
    02 · Kolla-Ansible
 
-.. container:: cards
+.. container:: cards two
 
    .. container:: card legacy fragment
 
@@ -534,12 +534,6 @@ Removed in Kolla-Ansible
 
    .. container:: card legacy fragment
 
-      Legacy Neutron upgrade
-
-      Rolling upgrade only; drop ``neutron_enable_rolling_upgrade``
-
-   .. container:: card legacy fragment
-
       OVN DHCP agent
 
       OVN answers DHCP for bare metal ports natively
@@ -550,19 +544,11 @@ Removed in Kolla-Ansible
 
       oslo.policy no longer supports them
 
-   .. container:: card legacy fragment
-
-      Redis leftovers
-
-      ``[redis:children]`` and ``redis_master_password`` gone after the
-      Valkey migration
-
 .. revealjs-notes::
 
    Also removed: obsolete Horizon local_settings options (TEMPLATE_DEBUG,
    enable_lb / enable_firewall / enable_vpn under
-   OPENSTACK_NEUTRON_NETWORK). The Redis to Valkey migration code had been
-   kept since Gazpacho (2026.1).
+   OPENSTACK_NEUTRON_NETWORK).
 
 Fixes worth knowing
 -------------------
